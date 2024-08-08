@@ -24,7 +24,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::middleware(['auth:sanctum'])->group(function () {
+// Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
 
     // route kategori    
@@ -54,7 +54,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('aktor/{id}', [AktorController::class, 'show']);
     Route::put('aktor/{id}', [AktorController::class, 'update']);
     Route::delete('aktor/{id}', [AktorController::class, 'destroy']);
-});
+// });
 
 // route film
 Route::post('login', [AuthController::class, 'login']);
